@@ -28,7 +28,7 @@
 {TERESA : Telepresence Reinforcement Learning Social Agent.}
 
 \subtitle
-{WP5 : Learning Social Skills} % (optional)
+{Learning Social Skills} % (optional)
 
 \author[Kyriacos Shiarlis] % (optional, nur bei vielen Autoren)
 {Kyriacos Shiarlis}
@@ -59,6 +59,13 @@
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% REMEMBER IN PRESENTATIONS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% CONNECTIONS BETWEEN SLIDES
+% NEVER EVER ME HUMBLE
+% ALWAYS CONNECT BACK INTO THE APPLICATION
+% DONT EVER SAY EEEEEE 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{document}
 
 
@@ -83,20 +90,20 @@
 \end{frame}
 % PROJECT MOTIVATION
 \begin{frame}{Telepresence - Why?}
-Telepresence allows greater remote user \textbf{control} and \textbf{interaction}.
-
-User also \textbf{feels} and \textbf{appears} more present in a remote situation.\\
-\vspace{3mm}
-\underline{Applications include:}
-	\begin{itemize}
-		\item \textbf{Assistive technologies:} Remote visits to elderly, disabled, or hospitalised individuals.	
-		\item \textbf{Industrial:} Remote inspections, conferences, visits.
-		\item \textbf{Academic:} Conferences, supervisions. 
-	\end{itemize}
-			\setbeamercolor{postit}{fg=white,bg=MyBlue}
-			\begin{beamercolorbox}[sep=0.5em,wd=10cm]{postit}
-			TERESA concentrates on deployment in elderly homes.
-		\end{beamercolorbox}
+	Telepresence allows greater \textbf{control} and \textbf{interaction} for the remote user.\\
+	\vspace{3mm}
+	\uncover<2->{The user also \textbf{feels} and \textbf{appears} more present}\\
+	\vspace{3mm}
+	\uncover<3->{\underline{Applications include:}
+			\begin{itemize}
+				\item \textbf{Assistive technologies:} Remote visits to elderly, disabled, or hospitalised individuals.	
+				\item \textbf{Industrial:} Remote inspections, conferences, visits.
+				\item \textbf{Academic:} Conferences, supervisions. 
+			\end{itemize}}
+	\setbeamercolor{postit}{fg=white,bg=MyBlue}
+	\uncover<4->{\begin{beamercolorbox}[sep=0.5em,wd=10cm]{postit}
+					TERESA concentrates on deployment in elderly homes.
+				\end{beamercolorbox}}
 \end{frame}
 
 % WHATS MISSING
@@ -109,8 +116,10 @@ User also \textbf{feels} and \textbf{appears} more present in a remote situation
 		\end{column}
 		\begin{column}[t]{6cm}
 			\begin{itemize}
-				\item \textbf{Control} of the device can be hard.\\
+				\item \textbf{Control} of the device can be hard.\\ % TODO EXPLAIN THE COGNITIVE OVERLOAD. What is it, why is it better to relieve it 
+				\vspace{3mm}
 				\item Interaction is not as \textbf{natural} as a result.\\
+				\vspace{3mm}
 				\item Device only allows \textbf{audiovisual} interaction.\\
 			\end{itemize}
 		\end{column}
@@ -122,10 +131,10 @@ User also \textbf{feels} and \textbf{appears} more present in a remote situation
 	\begin{block}{Practical}
 		\begin{itemize}
 			\item Remove the cognitive load of control.
-			\item Appearing as human as possible. 
+			\item Appear socially integrated. 
 		\end{itemize}
 	\end{block}
-	\begin{block}{Scientific}
+	\begin{block}<2->{Scientific}
 		\begin{itemize}
 			\item To what extent socially acceptable behaviour can be Learned.
 			\item What sort of implicit feedback is needed to achieve this.
@@ -137,44 +146,61 @@ User also \textbf{feels} and \textbf{appears} more present in a remote situation
 % EXAMPLE
 \begin{frame}{Example}
 	\begin{block}{Questions}
-		How should a robot approach a group of people? What what is the correct distance to stop?
+		How should a robot approach a group of people? What is the correct distance to stop?
 	\end{block}
-	$\Rightarrow$ Hard Coding Social Norms is very complex.
-	\begin{block}{Our approach}
-		Experiment $\rightarrow$ Data $\rightarrow$ Offline Learning $\rightarrow$ Implicit Reward  $\rightarrow$ Semi-autonomous behaviour.	
+	\uncover<2->{$\Rightarrow$ Hard Coding Social Norms is very complex.}
+	\begin{block}<3->{Our approach}
+		Experiment $\rightarrow$ Data $\rightarrow$ Offline Learning $\rightarrow$ Semi-autonomous behaviour.	
 	\end{block}
-	$\Rightarrow$ Easier and more natural local-remote user interaction.
+		\uncover<4>{$\Rightarrow$ More fluent and natural local-remote user interaction.}
 \end{frame} 
 
 % CONGITIVE ARCHITECTURE
-\begin{frame}{Cognitive Architecture}
-	\begin{center}
-		\includegraphics[scale = 0.45]{framework.pdf}
-	\end{center}
+\begin{frame}{Cognitive Architecture} % TODO: Explain this better. More detail about what the partners do. Social part. Sensing part. Makes our purpose more clear as well
+	\begin{columns}
+	\hspace{-30mm}
+		\begin{column}[t]{3.2cm}
+			
+			Feedback from:
+			\begin{itemize}
+				\item Facial analysis.
+				\vspace{4mm}
+				\item Conversation flow/tone.
+				\vspace{4mm}
+				\item Body poses.
+			\end{itemize}
+		\end{column}
+		\hspace{-25mm}
+		\begin{column}[t]{3cm}
+			
+				\includegraphics[width = 67mm,height = 64mm]{framework.pdf}
+			
+		\end{column}
+	\end{columns}
 \end{frame}
 
 %% Learning Social Skills - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 %Questions
 \section{Learning Social Skills}
 \begin{frame}{Learning Social Skills}
-	How can emotional feedback from the robot's environment improve its behaviour?\\
-	\begin{block}{Example}
+	\uncover<1->{How can emotional/implicit feedback from the robot's environment improve its behaviour?}\\
+	\begin{block}<2->{Example}
 		Robot comes \textbf{dangerously} close and at high velocity - Person \textbf{frowns} - After learning the robot \textbf{avoids} action in similar situations. 	
 	\end{block}
-	Does that perform better than hand-coding social behaviour?		
+	\uncover<3->{Does that perform better than hand-coding social behaviour?}		
 \end{frame}
 
 % AIMS
-\begin{frame}{Learning Social Skills - Aims}
+\begin{frame}{Learning Social Skills - Aims} % THREE FORMS OF FEEDBACK. explain. better. make clear why there are 3 of them and what they serve
 	\begin{center}
 		\begin{columns}
-			\begin{column}[t]{3cm}
+			\begin{column}[t]{3cm}<1->
 				\underline{\textbf{Extract}}
 			\end{column}
-			\begin{column}[t]{2cm}
+			\begin{column}[t]{2cm}<2->
 				\underline{\textbf{Integrate}}
 			\end{column}
-			\begin{column}[t]{1cm}
+			\begin{column}[t]{1cm}<3->
 				\underline{\textbf{Plan}}
 			\end{column}
 		\end{columns}
@@ -207,14 +233,13 @@ User also \textbf{feels} and \textbf{appears} more present in a remote situation
 		\includegraphics[scale = 0.4]{INT.png}
 	\end{center}
 \end{frame}
-\begin{frame}
+\begin{frame}{Challenges}
 	\begin{block}{Planning}
 		\begin{itemize}
-			\item UvA is wholly responsible in planning body pose policies.
-			\item Does planning have different priorities in social occasions?
-			\item Do we plan myopically? 
-			\item Collaborating with UPO on Navigation.
-			\item How will the two be regulated?
+			\item<1-> UvA is responsible for planning body pose policies.
+			\item<2-> What are the priorities in social occasions?
+			\item<4-> Collaborating with UPO on Navigation.
+			\item<5-> How will the two be regulated?
 		\end{itemize}
 	\end{block}
 	\begin{center}
@@ -222,18 +247,18 @@ User also \textbf{feels} and \textbf{appears} more present in a remote situation
 	\end{center}
 \end{frame}
 
-%% CURRENT RESEARCH INTERESTS -----------------------------------------------------------------------------------------------------------------------------------------------
-\section{Current Research Intrests}
+%% CURRENT RESEARCH INTERESTS-----------------------------------------------------------------------------------------------------------------------------------------------
+\section{Current Research Intrests} % TODO: make an introduction regarding apprenticeship learning in general. Show definitions and limitations of each LfD - IRL. This makes the aim and assumptions of IRL better as well
 % IRL
-\begin{frame}{Inverse Reinforcement Learning}{Definition}
-	\begin{block}{Given:} 
+\begin{frame}{Inverse Reinforcement Learning}{Definition}  % Perhaps different cost functions for each scenario
+	\begin{block}<2->{Given:} 
 		\begin{enumerate}  
 			\item Measurements of an agent's behaviour over time, in a variety of circumstances
 			\item Sensory inputs to the agent.
 			\item A model of the Environment.
 		\end{enumerate}
 	\end{block}
-	\begin{block}{Determine:} The reward function $R(s,a)$ being optimised. 
+	\begin{block}<3->{Determine:} The reward function $R(s,a)$ being optimised. 
 	\end{block}	
 \end{frame}
 \begin{frame}{Inverse Reinforcement Learning}
@@ -249,7 +274,7 @@ User also \textbf{feels} and \textbf{appears} more present in a remote situation
 Algorithms work by choosing weights to match certain trajectory statistics e.g:\\
 \textbf{Feature Expectation} : $\Phi_E = \frac{1}{m}\sum_{m=0}^M\sum_{t=0}^T \phi(s_t,a_t)$\\
 \textbf{Likelihood} : $P(s_{1-T},a_{1-T}|\pmb{w})$
-	\begin{block}{Problems}
+	\begin{block}{Problems}<2->
 		\begin{itemize}
 			\item Many Reward functions will cause the observed behaviour. Additional constraints are many times used.
 			\item Each iteration usually requires solving the MDP.
@@ -265,25 +290,30 @@ Algorithms work by choosing weights to match certain trajectory statistics e.g:\
 		Ziebart et al (2010) added extra disambiguating constraints and applied to route prediction.
 	\end{block}
 	\begin{block}{Maximum Margin Planning}
-		Ratliff et al (2006) Posed the problem as a Structured Classification. Again applied to route prediction
+		Ratliff et al (2006) Posed the problem as a Structured Classification. Again applied to route prediction.
 	\end{block}
 	Many more....But.
 \end{frame}
-% PARTIAL OBSERVABILITY TODO add tiger problem slide. add not clear aim of IRL feature expectation
+% PARTIAL OBSERVABILITY
 \begin{frame}{Partial Observability in IRL}
 	\begin{block}{Observation 1:} All literature assumes the expert and apprentice have the same observational capabilities. \end{block} % explain this better
-	\begin{block}{Observation 2:} No principled reason why IRL is better than imitation. \end{block}
-	\begin{block}{Motivation} Partial observability is possible the case in TERESA. e.g: 
+	\begin{block}{Observation 2:}<2-> No principled reason why IRL is better than imitation. \end{block}
+	\begin{block}{Motivation}<3-> Partial observability is possible the case in TERESA. e.g: 
 		\begin{itemize}
 			\item The Pilot-Expert only senses through a camera.
 			\item The Robot has 360 degree laser range finding capabilities.
 		\end{itemize}
 	\end{block}
 	\setbeamercolor{postit}{fg=white,bg=MyBlue}	
-	\begin{beamercolorbox}[sep=0.5em,wd=10cm]{postit}
+	\uncover<4->{\begin{beamercolorbox}[sep=0.5em,wd=10cm]{postit}
 		=> What are the implications of observability mismatch in IRL?
-	\end{beamercolorbox}
+	\end{beamercolorbox}}
 \end{frame}
+
+
+%%% GIVE GENERAL EXAMPLE WITH THE PROJECT. Talk about different accuracies and mismatches in observability. THEN GO TO TIGER. 
+%%% GOING TO TIGER IMMEDIATELLY CONFUSES PEOPLE. COUPLE EXTREME WITH TERESA SCENARIO. Identify the differences in toy and real. Seem like you know that toy is not the answer.
+
 
 \begin{frame}{Extreme No 1}{Tiger Problem}
 	\begin{center}
@@ -301,22 +331,22 @@ Algorithms work by choosing weights to match certain trajectory statistics e.g:\
 	\end{center}
 	\vspace{-4mm}
 		\begin{itemize}
-			\item We now receive belief-action trajectories $[(b(s)_1,a_1),(b(s)_2,a_2),...,(b(s)_T,a_T)]$
-			\item False information about what to do in uncertain belief states.
-			\item Less information about what the expert is trying to do!
+			\uncover<1->{\item Apprentice receives belief-action trajectories $[(b(s)_1,a_1),(b(s)_2,a_2),...,(b(s)_T,a_T)]$}
+			\uncover<2->{\item No information about what to do in uncertain belief states.}
+			\uncover<3->{\item Less information about what the expert is trying to do!}
 		\end{itemize}
 	\setbeamercolor{postit}{fg=white,bg=MyBlue}	
 \end{frame}
 
 \begin{frame}{Extreme No 1}{Possible Solutions}
-	\begin{enumerate}
-		\item Perform forward-backward procedure on beliefs. This will push our samples to the extremes of the simplex.
-		\item Assume a dual controller for the Apprentice.
+	\begin{block}<2->{What is the expert trying to do?}Perform forward-backward procedure on beliefs. This will push our samples to the extremes of the simplex.\end{block}
+	\begin{block}<3->{What do we do when uncertain?}
+		Assume a dual controller for the Apprentice.
 			\begin{itemize}
 				\item The information gathering part of the Reward function is given.
 				\item The control part of the Reward function is learned from the expert trajectories.
 			\end{itemize}
-	\end{enumerate}
+	\end{block}
 \end{frame}
 
 
@@ -335,22 +365,23 @@ Algorithms work by choosing weights to match certain trajectory statistics e.g:\
 	\end{center}
 	\vspace{-5mm}
 		\begin{itemize}
-			\item We now receive state-belief(belief)-action trajectories $[s_1,b_A(b_E(s))_1,a_1),(s_1,b_A(b_E(s))_2,a_2),...,(s,b_A(b_E(s))_T,a_T)]$
-			\item We don't want to know what to do in uncertain belief states.
-			\item Less information about what the expert is trying to do!
+			\uncover<1->{\item Apprentice receives state-belief(belief)-action trajectories $[(s_1,b_A(b_E(s))_1,a_1),(s_1,b_A(b_E(s))_2,a_2),...,(s,b_A(b_E(s))_T,a_T)]$}
+			\uncover<2->{\item We don't want to know what to do in uncertain belief states.}
+			\uncover<3->{\item Less information about what the expert is trying to do!}
 		\end{itemize}
 	\setbeamercolor{postit}{fg=white,bg=MyBlue}	
 \end{frame}
 
-\begin{frame}{Extreme No 1}{Possible Solutions}
-	\begin{enumerate}
-		\item Perform forward-backward procedure on beliefs of beliefs. Again, this will push our samples to the extremes of the simplex.
-		\item Assume the expert is using a dual-controller.
+\begin{frame}{Extreme No 2}{Possible Solutions}
+	\begin{block}<2->{What is the expert trying to do?}
+		Perform forward-backward procedure on beliefs of beliefs. Again, this will push our samples to the extremes of the simplex.\end{block}
+	\begin{block}<3->{How do we ignore uncertain states?}
+		Assume the expert is using a dual-controller.
 			\begin{itemize}
 				\item The information gathering part of the Reward function is given.
 				\item The control part of the Reward function is learned from the expert trajectories.
 			\end{itemize}
-	\end{enumerate}
+	\end{block}
 \end{frame}
 
 \begin{frame}{Partial Observability IRL}{Conclusions}
@@ -359,13 +390,14 @@ Algorithms work by choosing weights to match certain trajectory statistics e.g:\
 	\begin{beamercolorbox}[sep=0.5em,wd=10.5cm]{postit}
 		We are no longer trying to replicate the expert's behaviour!
 	\end{beamercolorbox}
-	$\Rightarrow$ This provides a much more clear motivation for IRL!
+	\uncover<2->{$\Rightarrow$ This provides a much more clear motivation for IRL!}
 	\vspace{9mm}
+	\uncover<3->{
 		\setbeamercolor{postit}{fg=white,bg=MyBlue}	
 	\begin{beamercolorbox}[sep=0.5em,wd=7.5cm]{postit}
 		As posed, the problem seems unsolvable.
-	\end{beamercolorbox}\\
-	$\Rightarrow$ We need to make extra assumptions and approximations!
+	\end{beamercolorbox}}\\
+	\uncover<4->{$\Rightarrow$ We need to make extra assumptions and approximations!}
 	\end{centering}
 \end{frame}
 
